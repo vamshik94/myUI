@@ -8,6 +8,10 @@
     .sigin-txt {
       color: red;
     }
+    .user-name-label, 
+    .password-label {
+      visibility: hidden;
+    }
   </style>
 </head>
 
@@ -21,6 +25,11 @@
     <div class="password-div">
       <label class="password-label">Password</label>
       <input type="password" placeholder="Password" class="password-input">
+    </div>
+    <div class="password-div">
+      <label class="gender-label">Gender</label>
+      <input type="radio" name="gender" checked> Male
+      <input type="radio" name="gender"> FeMale
     </div>
     <!-- <button>
       Cancel

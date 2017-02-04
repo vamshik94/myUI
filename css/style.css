@@ -15,6 +15,7 @@ body {
     margin-top: 15%;
     border-radius: 10px;
     opacity: 0.7;
+    position: relative;
   }
   
   .user-name-label {
@@ -26,6 +27,10 @@ body {
     padding-right: 21px;
   }
   
+  .gender-label {
+    padding-left: 10px;
+    padding-right: 25px;
+  }
   .user-name-input,
   .password-input {
     width: 50%;
