@@ -1,0 +1,86 @@
+.body {
+    background-image: url(../images/sunset.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+.main-div {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.head-div {
+    height: 100px;
+    width: 100%;
+    position: relative;
+
+}
+.head-left-div {
+    height: 100%;
+    width: 50%;
+    float: left;
+    direction: ltr;
+    display: inline-block;
+
+}
+#a-link {
+    color: white;
+    font-style: bold;
+    height: 50px;
+     margin: 10px;
+    padding: 20px;
+
+}
+.head-right-div {
+    height: 100%;
+    width: 50%;
+    float: right;
+    direction: rtl;
+
+}
+#p-temp {
+    color: white;
+    padding-right: 10px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    height: 100px;
+    text-align: center;
+    margin-left: 200px;
+    float: right;
+}
+.body-div {
+    height: 450px;
+    width: 100%;
+    position: absolute;
+}
+.content-div {
+    height: 400px;
+    margin: auto;
+    margin: 30px 30px 30px 30px;
+    padding: 30px 30px 30px 30px;
+    text-align: center;
+    color: whitesmoke;
+    opacity: 0.7;
+
+}
+#ptime-content-div {
+    margin: 10px 10px 0px 10px;
+    padding: 40px 20px 0px 20px;
+    font-size: 100px;
+    position: relative;
+    opacity: 0.8;
+    font-family: -webkit-body;
+    font-weight: bold;
+}
+
+
+#p-head-left {
+    margin: 10px;
+    padding: 10px 10px 10px 0px;
+    position: absolute;
+}
+
+
+
