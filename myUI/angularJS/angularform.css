@@ -1,0 +1,40 @@
+.body-div{
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    background-color: lightblue;
+    position: absolute;
+}
+.mainDiv{
+    width: 100%;
+    height: 500px;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    position: absolute;
+}
+.childFirstDiv{
+    width: 100%;
+    height: 75px;
+    margin: 0px;
+    border: 4px;
+    padding: 10px;
+    text-align: center;
+    background-color: orange;
+}
+#firstID{
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    border: 0px;
+    padding: 5px;
+    padding-top: 10px;
+    text-align: center;
+}
+.formclass{
+    width: 100%;
+    margin: 15px;
+    border:5px;
+    padding: 5px;
+}

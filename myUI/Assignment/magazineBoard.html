@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="admin1">
+<head>
+    <title>Magazine</title>
+    <style type="text/css">
+        .navTag{
+            height: 120px;
+            background-color: lightgreen;
+        }
+        .body-div{
+            background-color: rgb(244, 217, 110);
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../LIBRARIES/bootstrap-3.3/css/bootstrap.css">
+</head>
+<body ng-controller="magazine-control">
+<div class="body-div">
+    <nav class="navTag">
+        <div class="container-fluid ">
+            <div class="row col-xs-12">
+                <div class="col-sm-6">
+                    <h2 class="mouse-hover">
+                       Magazine Administration Page
+                    </h2>
+                </div>
+                <div class="col-sm-6 text-right ">
+                    <span><a href="">Go to front page</a></span>
+                    <span>Home</span>
+                    <span><a href="">Sign Out</a></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron body-div" >
+            <div class="container">
+                <div>
+                    <span><a href="">Dashboard</a> > </span>
+                    <span style="opacity: 0.5">Current Article</span>
+                </div>
+               <!--  <div>
+                    <h1>Hello, world!</h1>
+                    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+                </div> -->
+                <div class="col-sm-6-offset-1 col-sm-6">
+                    <form class="form-inline text-right">
+                        <div><p>current news</p></div>
+                        <div class="form-group">
+                            <label>Search</label>
+                             <input type="text" ng-model="search" class="form-control" placeholder="search">
+                        </div>
+                    </form>
+                    <div>
+                        <div class="header">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" name=""></th>
+                                        <th>Title</th>
+                                        <th>Date</th>
+                                        <th>Added By</th>
+                                        <th>Content</th>
+                                        <th>Control</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="data in userdata">
+                                        <td><input type="checkbox" name=""></td>
+                                        <td ng-bind="data.title">{{vamshi}}</td>
+                                        <td ng-bind="data.date"></td>
+                                        <td ng-bind="data.addedBy"></td>
+                                        <td ng-bind="data.delete" ><span class="glyphicon glyphicon-trash text-danger"></span></td>
+                                        <td ng-bind="data.edit"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- <div class="body">
+                            <div class="modal fade" tabindex="-1" role="dialog">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Modal title</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>One fine body&hellip;</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                  </div>
+                                </div><!-- /.modal-content -->
+                              </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="body-div">
+        <footer>
+            <p>content is king</p>
+        </footer>
+        </div>
+    </div>
+</div>
+<script src="../LIBRARIES/bootstrap-3.3/js/bootstrap.js"></script>
+<script src="../LIBRARIES/jquery-3.1.1.js"></script>
+<script src="../LIBRARIES/angular.js"></script>
+<script type="text/javascript">
+angular.module('admin1',[]).controller('magazine-control',function ($scope){
+    $scope.userdata =
+            [
+                {
+                    title:'mirror',
+                    date:'3/1/2017',
+                    addedBy:'vamshi',
+                    delete:'Delete',
+                    edit:'Edit'
+                },
+                {
+                    title:'techcompany',
+                    date:'3/1/2017',
+                    addedBy:'srikanth',
+                    delete:'Delete',
+                    edit:'Edit'
+                },
+                {
+                    addedBy:'varun',
+                    title:'mechanics',
+                    date:'3/1/2017',
+                    delete:'Delete',
+                    edit:'Edit'
+                },
+                {
+                    addedBy:'sainath',
+                    title:'india',
+                    date:'3/1/2017',
+                    delete:'Delete',
+                    edit:'Edit'
+                }
+                ];
+});
+</script>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<!-- Multiple Check All & Uncheck All Boxes
+
+All You Need to change is the tag 'name' to change the what its turing ON/OFF
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title></title>
+ </head>
+ <body>
+ <FORM>
+    <input type="checkbox" name="item0[]" onclick="CheckAll(this)" />
+    <input type="checkbox" name="item0[]" value="1" />
+    <input type="checkbox" name="item0[]" value="2" />
+    <input type="checkbox" name="item0[]" value="3" />
+
+    <br>
+    <input type="checkbox" name="item1[]" onclick="CheckAll(this)" />
+    <input type="checkbox" name="item1[]" value="a" />
+    <input type="checkbox" name="item1[]" value="b" />
+    <input type="checkbox" name="item1[]" value="c" />
+    <br>
+    <input type="checkbox" name="item2" onclick="CheckAll(this)" />
+    <input type="checkbox" name="item2" value="a1" />
+    <input type="checkbox" name="item2" value="b2" />
+    <input type="checkbox" name="item2" value="bc" />
+</FORM>
+
+<script>
+    function CheckAll(x)
+    {
+        var allInputs = document.getElementsByName(x.name);
+        for (var i = 0, max = allInputs.length; i < max; i++)
+        {
+            if (allInputs[i].type == 'checkbox')
+            if (x.checked == true)
+                allInputs[i].checked = true;
+            else
+                allInputs[i].checked = false;
+        }
+    }
+</script>
+ </body>
+ </html>

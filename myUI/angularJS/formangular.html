@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="adminApp" >
+<head>
+    <title>form</title>
+    <link rel="stylesheet" type="text/css" href="../LIBRARIES/bootstrap-3.3/css/bootstrap.css">
+    <style type="text/css">
+    .user-table{
+        margin-top: 50px;
+
+
+    };
+    </style>
+</head>
+<body ng-controller="user-control">
+    <div class="container-fluid jumbotron ">
+    <h1 class="text-center">TABLE</h1>
+        <div class="col-sm-6 user-table">
+            <table class="table table-hover table-bordered table-striped text-success">
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="obj in userdata">
+                        <td ng-bind="obj.sno"></td>
+                        <td ng-bind="obj.fname"></td>
+                        <td ng-bind="obj.lname"></td>
+                        <td ng-bind="obj.age"></td>
+                        <td ng-bind="obj.gender"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../LIBRARIES/angular.js"></script>
+    <script>
+        angular.module('adminApp',[]).controller('user-control',function($scope) {
+            // body...
+            $scope.userdata =[
+                {
+                    sno:1,
+                    fname:'vamshi',
+                    lname:'krishna',
+                    age:24,
+                    gender:'male'
+                },
+                {
+                    sno:2,
+                    fname:'sai',
+                    lname:'varun',
+                    age:24,
+                    gender:'male'
+                },
+                {
+                    sno:3,
+                    fname:'bindu',
+                    lname:'srisailapu',
+                    age:23,
+                    gender:'female'
+                }
+                ];
+        });
+    </script>
+</body>
+</html>

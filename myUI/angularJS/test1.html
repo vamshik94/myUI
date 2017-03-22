@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Ticket Forwarding</title>
+</head>
+
+<body style="background-image:url('bg.png')">
+    <style type="text/css">
+    table.imagetable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#333333;
+        border-width: 1px;
+        border-color: #999999;
+        border-collapse: collapse;
+    }
+
+    table.imagetable th {
+        background:#b5cfd2 url('cell-blue.jpg');
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #999999;
+    }
+
+    table.imagetable td {
+        background:#dcddc0 url('cell-grey.jpg');
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #999999;
+    }
+    </style>
+
+    <script language="javascript">
+   function deleteRow(tableID)  {
+        var table = document.getElementById(tableID).tBodies[0];
+        var rowCount = table.rows.length;
+
+        // var i=1 to start after header
+        for(var i=1; i<rowCount; i++) {
+            var row = table.rows[i];
+            // index of td contain checkbox is 8
+            var chkbox = row.cells[8].getElementsByTagName('input')[0];
+            if('checkbox' == chkbox.type && true == chkbox.checked) {
+                table.deleteRow(i);
+             }
+        }
+    }
+    </script>
+
+    <img src="abstergo.jpg">
+    <p style="color:#8A2BE2;font-family:Lucida Console;font-size:25px;background-
+image:url('cell-blue.jpg');margin:0px;width:1800px";> I.T.S->Forwarding & setting
+priorities for a ticket </p><br>
+
+    <table class="imagetable"  id="datatable"  style="margin:20px 0px 0px 50px">
+        <tr>
+            <th>ID</th>
+            <th>Subject</th>
+            <th>Subtopic</th>
+            <th>Message</th>
+            <th>Severity</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>forward to</th>
+            <th>checkbox</th>
+        </tr>
+        <tr>
+            <td>1</td><td>login problem</td>
+            <td>
+                <select name="helptopic">
+                    <option value="accounts">accounts</option>
+                    <option value="admin issues">admin issues</option>
+                    <option value="it-support" selected>it-support</option>
+                    <option value="project enquiry">project enquiry</option>
+                    <option value="general enquiry">general enquiry</option>
+                    <option value="tech. support">tech. support</option>
+                    <option value="feedback">feedback</option>
+                    <option value="others">others</option>
+                </select>
+            </td>
+            <td>Unable to login</td>
+            <td>
+                <select name="severity">
+                    <option>Minor</option>
+                    <option>Normal</option>
+                    <option>Major</option>
+                    <option>Critical</option>
+                </select>
+            </td>
+            <td>
+                <select name="priority">
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </td>
+            <td>
+                <select name="status">
+                    <option>New</option>
+                    <option>Assigned</option>
+                    <option>Resolved</option>
+                </select>
+            </td>
+            <td><input type="text" size="30"></td>
+            <td><input type="checkbox" name="chk"/></td>
+        </tr>
+    </table>
+    <input type="button" value="Forward" onclick="deleteRow('datatable')" />
+</body>
+</html>

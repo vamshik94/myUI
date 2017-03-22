@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="adminApp1">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../LIBRARIES/bootstrap-3.3/css/bootstrap.css">
+    <!-- <style type="text/css">
+        .main-div{
+            margin-top: 50px;
+        }
+    </style> -->
+</head>
+<body  ng-controller="user-control">
+    <div class="container jumbotron">
+        <form class="form form-group  col-xs-offset-4 col-xs-4">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>checkbox</th>
+                        <th>FirstName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" ng-model="allModel" ng-change="selectedCheckboxesAll()"> All</td>
+                    </tr>
+                    <tr ng-repeat="obj in userdata">
+                        <td><input type="checkbox" ng-model="user.status" ng-change="selectedCheckboxed($index, user)"></td>
+                        <td ng-bind="obj.fname + obj.lname"></td>
+                    </tr>
+                </tbody>
+            </table>
+        <div class="checkbox">
+            <tr>
+                <button type="submit" class="btn btn-success col-sm-offset-1 col-sm-4" ng-click="deleteUsers()">Submit</button>
+                <button type="submit" class="btn btn-danger col-sm-offset-1 col-sm-4" ng-click="deleteUsers()">Delete</button>
+            </tr>
+        </div>
+        </form>
+    </div>
+
+<script src="../LIBRARIES/angular.js"></script>
+<script type="text/javascript">
+    angular.module('adminApp1',[]).controller('user-control',function($scope) {
+            // body...
+            $scope.userdata =
+            [
+                {
+                    sno:'',
+                    fname:'vamshi',
+                    lname:' krishna',
+                    age:23,
+                    gender:'male'
+                },
+                {
+                    sno:'',
+                    fname:'sai',
+                    lname:' varun',
+                    age:24,
+                    gender:'male'
+                },
+                {
+                    sno:'',
+                    fname:'bindu',
+                    lname:' srisailapu',
+                    age:22,
+                    gender:'female'
+                }
+                ];
+                var selectIndexes = [];
+                $scope.selectedCheckboxed = function(index, obj){
+                  if(selectIndexes.indexOf(index) == -1) {
+                    selectIndexes.push(index);
+                  } else {
+                    var deselectedIndex = selectIndexes.indexOf(2);
+                    selectIndexes.splice(deselectedIndex, 1);
+                  }
+                  //selectedElements.push(obj);
+                  console.log('selected Indexes::', selectIndexes);
+                };
+
+                $scope.deleteUsers = function () {
+                  for (var i = 0; i < selectIndexes.length; i++) {
+                    $scope.usersData.splice(selectIndexes[i], 1);
+                  };
+                  alert('deleted' + selectIndexes.length + 'items');
+                };
+
+                $scope.selectedCheckboxesAll = function() {
+                  for (var i = 0; i < $scope.usersData.length; i++) {
+                    if($scope.allModel) {
+                      $scope.usersData[i].status = true;
+                      selectIndexes.push(i);
+                    } else {
+                      $scope.usersData[i].status = false;
+                    }
+
+                  };
+                }
+
+
+
+
+                // function CheckAll(x)
+                // {
+                //     var allInputs = document.getElementsByName(x.name);
+                //     for (var i = 0, max = allInputs.length; i < max; i++)
+                //     {
+                //         if (allInputs[i].type == 'checkbox')
+                //         if (x.checked == true)
+                //             allInputs[i].checked = true;
+                //         else
+                //             allInputs[i].checked = false;
+                //     }
+                // }
+        });
+
+</script>
+</body>
+</html>
